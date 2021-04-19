@@ -1,0 +1,9 @@
+body {
+  background-color: rgb(148, 148, 167);
+}
+.oucContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
