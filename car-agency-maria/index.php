@@ -12,6 +12,10 @@
 <body>
     <div class="container">
         <h1>Car Rental Agency</h1>
+
+
+        
+
         <?php
             $cars = array(
                 array ("make" => "Fiat", "model" => "500L", "availability" => true, "location" => "Wien", "pricPerDay" => 90.00, "image" => "https://images.pexels.com/photos/1009873/pexels-photo-1009873.jpeg?cs=srgb&dl=pexels-mike-1009873.jpg&fm=jpg"),
@@ -25,22 +29,39 @@
             );
         ?>
 
-        <div class="row">
+<div class='row row-cols-1 row-cols-md-3 g-4'>
+
+
+        
             <?php
 
                 $size = count($cars);
                 for($i = 0; $i < $size; $i++)
                 {
-                    echo "<div class='card text-white bg-secondary mb-3' style='max-width: 18rem;'>
-                    <img src='".$cars[$i]["image"]."' class='card-img-top' alt='...'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>". $cars[$i]["make"]." ".$cars[$i]["model"]."</h5>
-                        <p class='card-text'>Location: ".$cars[$i]["location"]."<br/>"."Price per day: €".$cars[$i]["pricPerDay"].".00</p>
-                        <a href='#' class='btn btn-warning'>Rent this car</a>
-                    </div>
-                    </div>";
-                    
+                    // echo "<div class='card text-white bg-secondary mb-4' style='width: 18rem;'>
+                    // <img src='".$cars[$i]["image"]."' class='card-img-top' alt='". $cars[$i]["make"]."'>
+                    // <div class='card-body'>
+                    //     <h5 class='card-title'>". $cars[$i]["make"]." ".$cars[$i]["model"]."</h5>
+                    //     <p class='card-text'>Location: ".$cars[$i]["location"]."<br/>"."Price per day: €".$cars[$i]["pricPerDay"].".00</p>
+                    //     <a href='#' class='btn btn-warning'>Rent this car</a>
+                    // </div>
+                    // </div>";
                    
+                    
+
+                    echo "
+                        <div class='col'>
+                            <div class='card h-100 border-0 rounded'>
+                                <img src='".$cars[$i]["image"]."' class='card-img-top' alt='". $cars[$i]["make"]."'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>". $cars[$i]["make"]." ".$cars[$i]["model"]."</h5>
+                                    <p class='card-text'>Location: ".$cars[$i]["location"]."<br/>"."Price per day: €".$cars[$i]["pricPerDay"].".00</p>
+                                </div>    
+                                <div class='card-footer'>
+                                    <small class='text-muted'><a href='#' class='btn btn-warning'>Rent this car</a></small>
+                                </div>
+                            </div>
+                        </div>";   
                 }
                    
             ?>
